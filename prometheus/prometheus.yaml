@@ -29,23 +29,30 @@ scrape_configs:
         labels:
           app: "gateway"
 
-  - job_name: "user"
+  - job_name: "order"
     metrics_path: "/actuator/prometheus"
     static_configs:
-      - targets: ["user:8181"]
+      - targets: ["order:8181"]
         labels:
-          app: "user"
+          app: "order"
 
-  - job_name: "post"
+  - job_name: "product"
     metrics_path: "/actuator/prometheus"
     static_configs:
-      - targets: ["post:8282"]
+      - targets: ["product:8282"]
         labels:
-          app: "post"
+          app: "product"
 
-  - job_name: "alert"
+  - job_name: "payment"
     metrics_path: "/actuator/prometheus"
     static_configs:
-      - targets: ["alert:8383"]
+      - targets: ["payment:8383"]
         labels:
-          app: "alert"
+          app: "payment"
+
+  - job_name: "shipping"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["shipping:8484"]
+        labels:
+          app: "shipping"
